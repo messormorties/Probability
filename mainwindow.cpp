@@ -3,12 +3,12 @@
 #include <QMessageBox>
 #include <ctime>
 #include <cstdlib>
+#include <QTimer>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     QIntValidator *validator = new QIntValidator(0, 9999, this);
     ui->totalballs1->setValidator(validator);
     ui->blueBalls1->setValidator(validator);
@@ -30,8 +30,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->move1to2, &QPushButton::clicked, this, &MainWindow::moveBall1to2);
     connect(ui->move2to1, &QPushButton::clicked, this, &MainWindow::moveBall2to1);
     connect(ui->extract2balls, &QPushButton::clicked, this, &MainWindow::take2Balls);
-
+    QTimer::singleShot(100, this, SLOT(showStartupInfo()));
     updateProbabilitis();
+}
+
+void MainWindow::showStartupInfo() {
+    QMessageBox::information(this, "Внимание", "Введите общее количество шаров и число синих шаров для корзин, число красных шаров будет расчитано автоматически");
 }
 
 void MainWindow::updateText() {
@@ -62,6 +66,7 @@ void MainWindow::updateText() {
 }
 
 void MainWindow::updateRedBalls1() {
+    // для работы программы нужно ввести общее число шаров и число синих шариков, красные будут вычислены
     totalBalls1=ui->totalballs1->text().toInt();
     blueBalls1 = ui->blueBalls1->text().toInt();
     redBalls1 = totalBalls1-blueBalls1;
@@ -76,6 +81,7 @@ void MainWindow::updateRedBalls1() {
 }
 
 void MainWindow::updateRedBalls2() {
+     // для работы программы нужно ввести общее число шаров и число синих шариков, красные будут вычислены
     totalBalls2=ui->totalballs2->text().toInt();
     blueBalls2 = ui->blueBalls2->text().toInt();
     redBalls2 = totalBalls2-blueBalls2;
@@ -176,7 +182,7 @@ void MainWindow::take2Balls() {
         int count = 2;
         while (count > 0) {
             bool takeFromBasket1 = (blueBalls1 + redBalls1 > 0) &&
-                                   ((blueBalls2 + redBalls2 == 0) || getRandom(0, 1) == 0);
+                                   ((blueBalls2 + redBalls2 == 0) || getRandom(0, 1) == 0); //0-1 корзина, 1- 2 корзина
 
             if (takeFromBasket1) {
                 if (totalBalls1==0) continue;
@@ -243,8 +249,6 @@ void::MainWindow::updateProbabilitis() {
            ui->probMixed->setText("0.00");
            return;
        }
-
-
 
        // Общие вероятности
        double total = totalBalls1+totalBalls2;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>980</width>
-    <height>637</height>
+    <width>881</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,7 +107,7 @@ border: 2px solid black; /* Черная граница */
                         <property name="minimumSize">
                          <size>
                           <width>70</width>
-                          <height>20</height>
+                          <height>23</height>
                          </size>
                         </property>
                         <property name="maximumSize">
@@ -255,7 +255,7 @@ border: 2px solid gray;
                         <property name="minimumSize">
                          <size>
                           <width>70</width>
-                          <height>0</height>
+                          <height>24</height>
                          </size>
                         </property>
                         <property name="maximumSize">
@@ -281,6 +281,9 @@ border: 2px solid gray;
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="readOnly">
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
@@ -488,7 +491,7 @@ border: 2px solid gray;
                         <property name="minimumSize">
                          <size>
                           <width>220</width>
-                          <height>0</height>
+                          <height>24</height>
                          </size>
                         </property>
                         <property name="maximumSize">
@@ -500,7 +503,7 @@ border: 2px solid gray;
                         <property name="font">
                          <font>
                           <family>Arial</family>
-                          <pointsize>11</pointsize>
+                          <pointsize>12</pointsize>
                          </font>
                         </property>
                         <property name="styleSheet">
@@ -869,6 +872,9 @@ border: 2px solid gray;
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
@@ -1472,7 +1478,7 @@ border: 2px solid black;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>980</width>
+     <width>881</width>
      <height>21</height>
     </rect>
    </property>

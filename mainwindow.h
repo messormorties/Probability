@@ -22,7 +22,7 @@ private slots:
    void moveBall1to2();
    void moveBall2to1();
    void take2Balls();
-
+   void showStartupInfo();
 
 private:
     Ui::MainWindow *ui;
