@@ -510,7 +510,7 @@ border: 2px solid gray;
 </string>
                         </property>
                         <property name="text">
-                         <string>извлекли синий и красный шар</string>
+                         <string>Действий не совершалось</string>
                         </property>
                         <property name="readOnly">
                          <bool>true</bool>
@@ -1096,6 +1096,9 @@ border: 2px solid gray;
 border-color: rgb(72, 72, 72);
 border: 2px solid gray;
 </string>
+                      </property>
+                      <property name="text">
+                       <string>Действий не совершалось</string>
                       </property>
                       <property name="readOnly">
                        <bool>true</bool>
